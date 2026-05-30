@@ -808,7 +808,8 @@ class PacketCaptureService(BaseServicePlugin):
             packet_data["duration"] = str(payload["duration"])
 
         # Add path for route=D (matches original script)
-        if route == "D" and packet_info.get("path"):
+        #if route == "D" and packet_info.get("path"):
+        if packet_info.get("path"):
             packet_data["path"] = ",".join(packet_info["path"])
 
         return packet_data
